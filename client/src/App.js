@@ -1,7 +1,9 @@
-import './App.css';
+// import './App.css';
 import {ethers} from 'ethers'
 import {useState,useEffect} from 'react'
 import abi from './contract/chai.json'
+import Buy from './components/Buy';
+import Memos from './components/Memos';
 function App() {
   const [state,setState]=useState({
     provider:null,
@@ -33,9 +35,13 @@ function App() {
     connectWallect()
   },[])
   console.log(state)
+
   return (
     <div className="App">
-    hello
+   
+      <Buy state={state}/>
+
+      <Memos state={state}/>
     </div>
   );
 }
