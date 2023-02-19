@@ -50,7 +50,7 @@ function Buy() {
               {({ field, form }) => (
                 <FormControl isInvalid={form.errors.name && form.touched.name}>
                   <FormLabel>First name</FormLabel>
-                  <Input {...field} placeholder='name' padding={4} width={320}/>
+                  <Input {...field} placeholder='name' padding={4} width={20}/>
                   <FormErrorMessage>{form.errors.name}</FormErrorMessage>
                 </FormControl>
               )}

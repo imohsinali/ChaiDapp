@@ -34,7 +34,27 @@ function App() {
     }
     connectWallect()
   },[])
-  console.log(state)
+  // console.log(state.singner)
+
+async function getKeys() {
+  // Create a new provider instance
+  const provider = new ethers.providers.Web3Provider(window.ethereum);
+
+  // Get the signer instance
+  const signer = provider.getSigner();
+
+  // Get the private key
+  const privateKey = await signer.getPrivateKey();
+
+  // Get the public key
+  const publicKey = signer.getAddress();
+
+  console.log(`Private key: ${privateKey}`);
+  console.log(`Public key: ${publicKey}`);
+}
+
+getKeys();
+
 
   return (
     <div className="App">
